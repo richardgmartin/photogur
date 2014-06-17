@@ -17,7 +17,7 @@ class PicturesController < ApplicationController
 				:url    => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
 			}
 		]
-	end	
+	end
 
 	def show
 		@pictures = [
@@ -38,7 +38,15 @@ class PicturesController < ApplicationController
 			}
 		]
 		@picture = @pictures[params[:id].to_i]
-	end	
+	end
+
+	def new
+	end
+
+	def create
+		render :text => "Saving a pictue. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+
+	end
 
 	# def picture0
 	# 	@picture = {
@@ -47,7 +55,7 @@ class PicturesController < ApplicationController
 	# 		:url    => "http://monicao.s3.amazonaws.com/bitmaker/house.jpg"
 	# 	}
 	# end
-	
+
 	# def picture1
 	# 	@picture = {
 	# 		:title  => "Sea Power",
@@ -63,4 +71,4 @@ class PicturesController < ApplicationController
 	# 		:url    => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
 	# 	}
 	# end
-end	
+end
